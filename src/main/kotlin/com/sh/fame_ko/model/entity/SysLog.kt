@@ -19,9 +19,6 @@ class SysLog(
     private var logType : LogType,
 
     @Column(name = "ip")
-    private var ip : String,
-
-    @ManyToOne(targetEntity = User::class , cascade = [CascadeType.REMOVE, CascadeType.PERSIST])
-    private var userId : UUID
+    private var ip : String
 ) : BaseEntity() {
 }

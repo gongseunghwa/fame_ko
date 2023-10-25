@@ -41,9 +41,6 @@ class Article(
 
     @Column(name = "tag_id")
     @OneToMany(targetEntity = Tag::class)
-    private var tagId : List<UUID>,
-
-    @ManyToOne(targetEntity = Category::class, cascade = [CascadeType.REMOVE])
-    private var categoryId : UUID
+    private var tagId : List<UUID>
 ) : BaseEntity()
 

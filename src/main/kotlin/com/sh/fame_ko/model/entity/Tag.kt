@@ -9,8 +9,8 @@ import javax.persistence.Table
 @Entity
 @Table(name = "tag")
 class Tag(
-    @ManyToOne(targetEntity = Article::class)
-    private var articleId : UUID,
+//    @ManyToOne(targetEntity = Article::class)
+//    private var articleId : UUID,
 
     @Column(name = "name")
     private var name : String
