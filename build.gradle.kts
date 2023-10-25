@@ -37,6 +37,8 @@ dependencies {
 	runtimeOnly("org.postgresql:postgresql")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	implementation("com.github.f4b6a3:ulid-creator:5.1.0")
+	implementation("io.github.microutils:kotlin-logging-jvm:3.0.5")
+
 }
 
 tasks.withType<KotlinCompile> {

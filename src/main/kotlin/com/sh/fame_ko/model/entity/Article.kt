@@ -27,7 +27,7 @@ class Article(
     @Column(name = "list_show")
     private var listShow : Boolean,
 
-    @Column(name = "headr_show")
+    @Column(name = "header_show")
     private var headerShow : Boolean,
 
     @Column(name = "priority")
