@@ -12,11 +12,11 @@ class WebConfig {
     public fun webMvcConfigurer() : WebMvcConfigurer? {
         return object : WebMvcConfigurer {
             override fun addResourceHandlers(registry: ResourceHandlerRegistry) {
-                val mediaResource: String =
-                    FILE_PROTOCOL + FameConst.USER_HOME + FameConst.FAME_HOME + FameConst.MEDIA_DIR
-                WebConfig.log.info("MediaResource:{}", mediaResource)
-                registry.addResourceHandler(WebConfig.MEDIA_PATH_PATTERNS)
-                    .addResourceLocations(mediaResource)
+                val mediaResource: String? = null
+//                    FILE_PROTOCOL + FameConst.USER_HOME + FameConst.FAME_HOME + FameConst.MEDIA_DIR
+//                WebConfig.log.info("MediaResource:{}", mediaResource)
+//                registry.addResourceHandler(WebConfig.MEDIA_PATH_PATTERNS)
+//                    .addResourceLocations(mediaResource)
             }
         }
 

@@ -1,4 +1,5 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jetbrains.kotlin.kapt3.base.Kapt.kapt
 
 plugins {
 	id("org.springframework.boot") version "2.7.17"
@@ -6,6 +7,7 @@ plugins {
 	kotlin("jvm") version "1.6.21"
 	kotlin("plugin.spring") version "1.6.21"
 	kotlin("plugin.jpa") version "1.6.21"
+	kotlin("kapt") version "1.6.21"
 }
 
 group = "com.sh"
@@ -38,8 +40,30 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	implementation("com.github.f4b6a3:ulid-creator:5.1.0")
 	implementation("io.github.microutils:kotlin-logging-jvm:3.0.5")
+	implementation("com.vladsch.flexmark:flexmark-all:0.62.2")
+	implementation("org.springframework.security:spring-security-web:5.6.1")
+
+
+	implementation("com.querydsl:querydsl-jpa:5.0.0")
+	implementation("com.querydsl:querydsl-apt:5.0.0")
+	implementation("javax.annotation:javax.annotation-api:1.3.2")
+	implementation("javax.persistence:javax.persistence-api:2.2")
+	annotationProcessor(group = "com.querydsl", name = "querydsl-apt", classifier = "jpa")
+	kapt("com.querydsl:querydsl-apt:5.0.0:jpa")
+
+
+	//jwt
+	implementation("io.jsonwebtoken:jjwt-api:0.11.2")
 
 }
+
+// QueryDSL
+kotlin.sourceSets.main {
+	println("kotlin sourceSets builDir:: $buildDir")
+	setBuildDir("$buildDir")
+}
+
+
 
 tasks.withType<KotlinCompile> {
 	kotlinOptions {

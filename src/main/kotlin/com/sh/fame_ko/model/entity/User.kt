@@ -9,19 +9,19 @@ import javax.persistence.Table
 @Table(name = "a_user")
 class User(
     @Column(name = "user_name")
-    private var userName : String,
+    var userName : String,
 
     @Column(name = "user_passwd")
-    private var password : String,
+    var password : String,
 
     @Column(name = "user_eamil")
-    private var email : String,
+    var email : String,
 
     @Column(name = "screen_name")
-    private var screenName : String,
+    var screenName : String,
 
     @Column(name = "logged")
-    private var logged : Date
+    var logged : Date
 ) : BaseEntity() {
 
 }
